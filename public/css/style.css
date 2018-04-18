@@ -1,0 +1,138 @@
+.box-alert{
+	position: fixed;
+	z-index: 1000;
+	right: 0;
+	top: 0;
+}
+
+.box-alert>.alert{
+	margin-bottom: 10px;
+}
+
+.li-menu:focus, .li-menu:hover {
+    background: #cccccc4f;
+}
+
+.double>.col-md-4, .double>.col-md-8{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+textarea{
+    resize: none
+}
+
+.tr>td:first-child{
+    padding-right: 1em;
+}
+
+/*Listado de trabajadores*/
+.table-details>tbody>tr>td:first-child{
+    width: 50%;
+    font-weight: bold;
+
+}
+
+.panel-details label{
+    padding-top: 0px;
+}
+
+
+
+@media (min-width: 600px){
+    .panel-details .col-md-10 {
+        width: 83.33333333%;
+    }
+
+    .panel-details .col-md-9 {
+        width: 75%;
+    }
+
+    .panel-details .col-md-6 {
+        width: 50%;
+    }
+
+    .panel-details .col-md-3 {
+        width: 25%;
+    }
+
+    .panel-details .col-md-1 {
+        width: 12.333333%;
+    }
+
+    .panel-details .col-md-12 {
+        width: 100%;
+    }
+
+    .panel-details .col-md-1, .panel-details .col-md-10, .panel-details .col-md-11, .panel-details .col-md-12, .panel-details .col-md-2, .panel-details .col-md-3, .panel-details .col-md-4, .panel-details .col-md-5, .panel-details .col-md-6, .panel-details .col-md-7, .panel-details .col-md-8, .panel-details .col-md-9 {
+        float: left;
+    }
+}
+
+
+.table-details>tbody>tr>td{
+    border-top: 0;
+}
+
+.modal-title{
+    display: inline-flex;
+}
+
+.modal-title .nro{
+    padding-left: 5px;
+}
+
+@media screen and (max-width: 767px){
+    .table-responsive {
+        border: 0;
+    }
+}
+
+@media (min-width: 768px){
+    .modal-sm {
+        width: 30% !important;
+    }
+}
+
+/*registrar unidades*/
+@media (min-width: 992px){
+    .col-md-1 {
+        width: 12.333333%;
+    }
+}
+
+@media (min-width: 992px){
+    .double>.col-md-4{
+        padding-left: 15px;
+    }
+    .double>.col-md-8{
+        width: 58.666667%;
+        padding-left: 15px;
+    }
+
+    .double.first{
+        margin-left: 37px;
+    }
+
+    .double.last{
+        margin-left: -2.6em;
+    }
+}
+
+@media (min-width: 1200px){
+    .double>.col-md-4, .double>.col-md-8{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .double.first{
+        margin-left: 3.4em;
+    }
+
+    .double.last{
+        margin-left: -4.6em;
+    }
+}
+
+
+
