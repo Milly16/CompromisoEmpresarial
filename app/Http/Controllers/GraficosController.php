@@ -118,8 +118,8 @@ class GraficosController extends Controller
             return redirect('home');
         /*$fechacreado = Carbon::parse($usuario->creadofecha)->format('Y');*/
 
-        $usuarios = Usuario::whereYear('creadofecha', '=', $anio)
-                        ->where('tipo_usuario_id', '!=', 1)
+        $usuarios = GenRequerimiento::whereYear('creadofecha', '=', $anio)
+                        ->where('estado', 'Cerrado')
                         ->get();
 
         $array = [];
@@ -152,26 +152,38 @@ class GraficosController extends Controller
         /*$fechacreado = Carbon::parse($requerimiento->creadofecha)->format('Y');*/
 
         $requerimientos = GenRequerimiento::whereYear('creadofecha', '=', $anio)
-                        ->get();
+                        ->where('eliminado', '0')
+                        ->get(['unidadtipo']);
+
+
+        $datos = array();
+
+        foreach ($requerimientos as $requerimiento) {
+            $datos[] = $requerimiento->unidadtipo;
+        }
 
         $array = [];
-        $meses = ['Enero', 'Febrero', 'Marzo', 'Abril' , 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-        for ($i=0; $i < 12; $i++) { 
+        $tipo_unidad = array_unique($datos);
+
+        /*die(var_dump(count($tipo_unidad)));*/
+
+
+        for ($i=0; $i < count($tipo_unidad); $i++) { 
             $cantidad = 0;
+            
             foreach ($requerimientos as $requerimiento) {
-                $fechacreado = Carbon::parse($requerimiento->creadofecha)->format('n');
-                if ($i == $fechacreado-1) {
+                
+                if ($tipo_unidad[$i] == $requerimiento->unidadtipo) {
                     $cantidad ++;
                 }
 
             }  
 
-            /*$array[$i]['name'] = $meses[$i]; */
-            /*$array[$i]['y'] = $cantidad; */
-            $array[$i] = $cantidad; 
+            $array[$i]['tipo_unidad'] = $tipo_unidad[$i]; 
+            $array[$i]['y'] = $cantidad; 
         }
 
-        return $array;
+        return array($array, $tipo_unidad);
     }
 
     public function graficopostulacion($anio){
@@ -183,28 +195,39 @@ class GraficosController extends Controller
             return redirect('home');
         /*$fechacreado = Carbon::parse($requerimiento->creadofecha)->format('Y');*/
 
-        $postulaciones = Postulacion::whereYear('creadofecha', '=', $anio)
-                        ->get();
+        $requerimientos = GenRequerimiento::whereYear('creadofecha', '=', $anio)
+                        ->where('eliminado', '0')
+                        ->get(['producto']);
 
+
+        $datos = array();
+
+        foreach ($requerimientos as $requerimiento) {
+            $datos[] = $requerimiento->producto;
+        }
 
         $array = [];
-        $meses = ['Enero', 'Febrero', 'Marzo', 'Abril' , 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-        for ($i=0; $i < 12; $i++) { 
+        $tipo_unidad = array_unique($datos);
+
+        /*die(var_dump(count($tipo_unidad)));*/
+
+
+        for ($i=0; $i < count($tipo_unidad); $i++) { 
             $cantidad = 0;
-            foreach ($postulaciones as $postulacion) {
-                $fechacreado = Carbon::parse($postulacion->creadofecha)->format('n');
-                if ($i == $fechacreado-1) {
+            
+            foreach ($requerimientos as $requerimiento) {
+                
+                if ($tipo_unidad[$i] == $requerimiento->producto) {
                     $cantidad ++;
                 }
 
             }  
 
-            /*$array[$i]['name'] = $meses[$i]; */
-            /*$array[$i]['y'] = $cantidad; */
-            $array[$i] = $cantidad; 
+            $array[$i]['tipo_unidad'] = $tipo_unidad[$i]; 
+            $array[$i]['y'] = $cantidad; 
         }
 
-        return $array;
+        return array($array, $tipo_unidad);
     }
 
     public function reporteexcel($id)

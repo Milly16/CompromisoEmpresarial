@@ -36,7 +36,7 @@ function usuario_grafico (anio) {
                     type: 'column'
                 },
                 title: {
-                    text: 'Numeros de Usuarios registrados en el año '+anio
+                    text: 'Generar gráfico de requerimientos realizados satisfactoriamente en '+anio
                 },
                 xAxis: {
                     categories: [
@@ -76,7 +76,7 @@ function usuario_grafico (anio) {
                     }
                 },
                 series: [{
-                    name: 'Numero de usuarios',
+                    name: 'Numero de requerimientos',
                     data: data
                 }]
             });
@@ -95,23 +95,10 @@ function requerimiento_grafico (anio) {
                     type: 'column'
                 },
                 title: {
-                    text: 'Numeros de Requerimientos Recibidos en el año '+anio
+                    text: 'Generar gráfico de requerimientos recibidos por tipo de unidad en '+anio
                 },
                 xAxis: {
-                    categories: [
-                        'Enero',
-                        'Febrero',
-                        'Marzo',
-                        'Abril',
-                        'Mayo',
-                        'Juno',
-                        'Julio',
-                        'Agosto',
-                        'Septiembre',
-                        'Octubre',
-                        'Noviembre',
-                        'Diciembre'
-                    ],
+                    categories: data[1],
                     crosshair: true
                 },
                 yAxis: {
@@ -135,8 +122,8 @@ function requerimiento_grafico (anio) {
                     }
                 },
                 series: [{
-                    name: 'Numero de requerimiento',
-                    data: data
+                    name: 'Numero de requerimientos',
+                    data: data[0]
                 }]
             });
 
@@ -154,23 +141,10 @@ function postulacion_grafico (anio) {
                     type: 'column'
                 },
                 title: {
-                    text: 'Numeros de Postulaciones Recibidas en el año '+anio
+                    text: 'Generar gráfico de requerimientos recibidos por tipo de prodcuto en '+anio
                 },
                 xAxis: {
-                    categories: [
-                        'Enero',
-                        'Febrero',
-                        'Marzo',
-                        'Abril',
-                        'Mayo',
-                        'Juno',
-                        'Julio',
-                        'Agosto',
-                        'Septiembre',
-                        'Octubre',
-                        'Noviembre',
-                        'Diciembre'
-                    ],
+                    categories: data[1],
                     crosshair: true
                 },
                 yAxis: {
@@ -194,8 +168,8 @@ function postulacion_grafico (anio) {
                     }
                 },
                 series: [{
-                    name: 'Numero de postulaciones',
-                    data: data
+                    name: 'Numero de requerimientos',
+                    data: data[0]
                 }]
             });
 
