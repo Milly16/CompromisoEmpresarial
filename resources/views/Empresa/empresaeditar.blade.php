@@ -1,11 +1,12 @@
 @extends('layouts.appG')
+
 @section('estilo')
     header .navbar-content{
         margin-top: -20px;
     }
 @endsection
 
-@extends(($empresa->tipo_usuario_id == 2) ? 'layouts.appG' : 'layouts.appT');
+
 
 @section('content')
 <div class="container">
