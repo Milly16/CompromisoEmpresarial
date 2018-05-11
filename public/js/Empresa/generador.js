@@ -15,7 +15,7 @@ $(function() {
             method: 'POST',
             data: $formRegister.serialize(),
             success: function (data) {
-                /*console.log(data);*/
+                console.log(data);
                 if (data != "") {
                     for (var property in data) {
                     	var alert = '<div class="alert alert-danger alert-dismissable fade in">'+
