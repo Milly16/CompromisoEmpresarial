@@ -45,7 +45,7 @@ class TranTrabajadorController extends Controller
         if (Auth::user()->tipo_usuario_id != 3)
             return redirect('home');
 
-        return view('Unidad-Trabajador.trabajador.nuevo');
+        return view('Unidad-Trabajador.Trabajador.nuevo');
     }
 
     /**
@@ -150,7 +150,7 @@ class TranTrabajadorController extends Controller
         if (! $trabajador) 
             return redirect('/transportista/trabajador/listado');
 
-        return view('Unidad-Trabajador.trabajador.editar')->with(compact('trabajador'));
+        return view('Unidad-Trabajador.Trabajador.editar')->with(compact('trabajador'));
     }
 
     /**

@@ -44,7 +44,7 @@ class TranUnidadController extends Controller
         if (Auth::user()->tipo_usuario_id != 3)
             return redirect('home');
 
-        return view('Unidad-Trabajador.unidad.nuevo');
+        return view('Unidad-Trabajador.Unidad.nuevo');
     }
 
     /**
@@ -182,7 +182,7 @@ class TranUnidadController extends Controller
         if (! $unidad) 
             return redirect('/transportista/unidad/listado');
 
-        return view('Unidad-Trabajador.unidad.editar')->with(compact('unidad'));
+        return view('Unidad-Trabajador.Unidad.editar')->with(compact('unidad'));
     }
 
     /**
