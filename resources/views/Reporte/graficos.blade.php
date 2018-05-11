@@ -25,7 +25,7 @@
 
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>Generar gráfico de requerimientos recibidos por tipo de unidad </b></div>
+                <div class="panel-heading"><b>Generar gráfico de requerimientos recibidos por tipo de unidad</b></div>
                 <div class="panel-body">
                     <b>Seleccione un año:</b> <select name="" id="anio-requerimiento">
                         <option value="2016">2016</option>

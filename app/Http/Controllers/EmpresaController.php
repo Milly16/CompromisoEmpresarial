@@ -222,6 +222,7 @@ class EmpresaController extends Controller
                     'id' => $empresa->id
 
             ]);
+            $empresaT->save();
 
             if ($request->file('archivo'))
                 {
@@ -233,6 +234,7 @@ class EmpresaController extends Controller
                     $move_file = $request -> file('archivo');             
 
                     if ($move_file ->move($path_archivo, $file_name_file)) {
+                        $empresaT = EmpresaTran::find($empresa->id);
                         $empresaT->archivo = $file_name_file;
                         $empresaT->save(); 
                     }else{
@@ -242,7 +244,7 @@ class EmpresaController extends Controller
                     }
                 }
 
-            $empresaT->save();
+            
 
             $usuario = Usuario::create([
                     'empresa_id' => $empresa->id,
