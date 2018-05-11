@@ -29,7 +29,7 @@ class TranTrabajadorController extends Controller
                         ->orderBy('id', 'desc')
                         ->paginate(3);
 
-        return view('Unidad-Trabajador.trabajador.listado')->with(compact('trabajadores'));
+        return view('Unidad-Trabajador.Trabajador.listado')->with(compact('trabajadores'));
     }
 
     /**

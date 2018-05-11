@@ -28,7 +28,7 @@ class TranUnidadController extends Controller
                         ->orderBy('id', 'desc')
                         ->paginate(3);
 
-        return view('Unidad-Trabajador.unidad.listado')->with(compact('unidades'));
+        return view('Unidad-Trabajador.Unidad.listado')->with(compact('unidades'));
     }
 
     /**
