@@ -65,7 +65,7 @@
 
 @section('scripts')
     <script src="{{ asset('/template/js/highcharts.js') }}"></script>
-    <script src="{{ asset('js/reporte/graficas.js') }}"></script>
+    <script src="{{ asset('js/Reporte/graficas.js') }}"></script>
 @endsection
 
 
