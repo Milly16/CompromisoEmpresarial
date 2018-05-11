@@ -1,13 +1,5 @@
 @extends('layouts.appG')
 
-@section('estilo')
-    header .navbar-content{
-        margin-top: -20px;
-    }
-@endsection
-
-
-
 @section('content')
 <div class="container">
     <div class="row">
