@@ -334,6 +334,6 @@ class TranUnidadController extends Controller
         if (! $unidad) 
             return redirect('/transportista/unidad/listado');
 
-        return view('Unidad-Trabajador.unidad.detalle')->with(compact('unidad'));
+        return view('Unidad-Trabajador.Unidad.detalle')->with(compact('unidad'));
     }
 }
