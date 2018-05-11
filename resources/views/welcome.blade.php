@@ -8,7 +8,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Laravel</title>
+        <title>COMPROMISO EMPRESARIAL</title>
 
         <!-- Styles -->
         <link href="{{ asset('template/css/bootstrap.min.css') }}" rel="stylesheet">

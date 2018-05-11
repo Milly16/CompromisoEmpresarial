@@ -52,10 +52,7 @@
                                         {{ $transportista->empresa->contnombre }} {{ $transportista->empresa->contapellido }} <br>
                                         {{ $transportista->empresa->conttelefono }}
                                     </td>
-                                    <td style="text-align: center;">
-                                        <a href="/download/{{ $transportista->empresa->empresa_tran->archivo }}" title="" class="btn btn-sm btn-warning"><i class="fa fa-download" aria-hidden="true"></i></a>
-                                        
-                                    </td>
+                                
                                     <td>
                                         {{ $transportista->empresa->direccion }} <br>
                                         {{ $transportista->empresa->distrito->descripcion }}
